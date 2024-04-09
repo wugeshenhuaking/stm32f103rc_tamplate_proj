@@ -4,9 +4,7 @@
 #include "stm32f10x.h"
 
 
-
-
-
+void user_systick(void);
 
 #endif 
 
