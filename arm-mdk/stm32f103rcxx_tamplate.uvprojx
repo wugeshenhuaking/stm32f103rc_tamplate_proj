@@ -325,8 +325,8 @@
             <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
-            <uGnu>0</uGnu>
+            <uC99>1</uC99>
+            <uGnu>1</uGnu>
             <useXO>0</useXO>
             <v6Lang>3</v6Lang>
             <v6LangP>3</v6LangP>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\library\inc;..\startup;..\user</IncludePath>
+              <IncludePath>..\library\inc;..\startup;..\user;..\bsp;..\application;..\bsp</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -559,6 +559,34 @@
               <FilePath>..\startup\system_stm32f10x.h</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>bsp</GroupName>
+          <Files>
+            <File>
+              <FileName>drv_usart_msp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\drv_usart_msp.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_usart_bsp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\drv_usart_bsp.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_systick_msp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\drv_systick_msp.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_systick_bsp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\drv_systick_bsp.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>application</GroupName>
         </Group>
       </Groups>
     </Target>
