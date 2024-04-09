@@ -2,7 +2,7 @@
 .\objects\drv_systick_msp.o: ..\bsp\drv_systick_msp.h
 .\objects\drv_systick_msp.o: ..\startup\stm32f10x.h
 .\objects\drv_systick_msp.o: ..\startup\core_cm3.h
-.\objects\drv_systick_msp.o: D:\Software\Coding_Tools\IDE\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\drv_systick_msp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\drv_systick_msp.o: ..\startup\system_stm32f10x.h
 .\objects\drv_systick_msp.o: ..\user\stm32f10x_conf.h
 .\objects\drv_systick_msp.o: ..\library\inc\stm32f10x_adc.h
@@ -29,3 +29,4 @@
 .\objects\drv_systick_msp.o: ..\library\inc\stm32f10x_usart.h
 .\objects\drv_systick_msp.o: ..\library\inc\stm32f10x_wwdg.h
 .\objects\drv_systick_msp.o: ..\library\inc\misc.h
+.\objects\drv_systick_msp.o: ..\user\stm32f10x_it.h
