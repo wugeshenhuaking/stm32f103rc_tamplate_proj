@@ -1,13 +1,7 @@
 #include "drv_systick_msp.h"
 #include "stm32f10x_it.h"
 
-//static uint64_t cnt_1ms =0 ;
-
-
-//volatile unsigned long cnt_1ms __attribute__((section(".ARM.__at_0x20000000")));
-
-static uint64_t cnt_1ms=0;
-	
+uint32_t cnt_1ms __attribute__((section(".ARM.__at_0x20000000")));
 
 void systick_init_msp(void)
 {
@@ -28,5 +22,57 @@ void systick_init_msp(void)
 void user_systick(void)
 {
 	cnt_1ms++;		// 毫秒计时器
+}
+
+uint32_t* get_cnt_1ms(void)
+{
+	uint32_t *p = &cnt_1ms;
+	return p;
+}
+
+void left_ms_set(time_ms_T *p,time_ms_T val)
+{
+	*p = (cnt_1ms+val) | TIMS_MS_RUN;		//设置时间轴上的比较点，并且设置运行标志
+}
+
+long left_ms_sta(time_ms_T *p)
+{
+	long r=0;
+	
+	if(*p & TIMS_MS_RUN)
+	{										//处于运行阶段
+		r=(*p-cnt_1ms) & (~TIMS_MS_RUN);			//获取比较点与当前时间计时的差
+		
+		if(r & 0x40000000)					//如果为负，说明已经超过比较点，延时结束
+		{
+			*p=0;							//清零运行标志
+			r=0;							//清零返回值
+		}
+		//时间没到，返回剩下的ms数
+	}
+	else
+	{
+		r=-1;
+	}
+	return(r);								
+}
+
+long left_ms(time_ms_T *p)
+{
+	long r=0;
+	
+	if(*p & TIMS_MS_RUN)
+	{										//处于运行阶段
+		r=(*p-cnt_1ms) & (~TIMS_MS_RUN);			//获取比较点与当前时间计时的差
+		
+		if(r & 0x40000000)					//如果为负，说明已经超过比较点，延时结束
+		{
+			*p=0;							//清零运行标志
+			r=0;							//清零返回值
+		}
+		//时间没到，返回剩下的ms数
+	}
+	
+	return(r);	
 }
 

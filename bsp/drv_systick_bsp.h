@@ -3,10 +3,7 @@
 
 #include "stm32f10x.h"
 
-
-
-
-
+void systick_init_bsp(void);
 
 #endif 
 
