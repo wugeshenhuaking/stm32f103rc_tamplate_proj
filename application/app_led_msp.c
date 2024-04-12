@@ -19,6 +19,16 @@ void app_led_gpio_mode_cfg(void)
 	GPIO_Init(LED0_PORT, &GPIO_InitStructure);					 //根据设定参数初始化GPIOB.5
 }
 
+void app_led_gpio_pwm_mode_cfg(void)
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_AF_PP ;
+	GPIO_InitStructure.GPIO_Pin=LED0_PINS;
+	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz ;
+	GPIO_Init(LED0_PORT,&GPIO_InitStructure);
+}
+
+
 void app_led_msp_init(void)
 {
 	app_led_gpio_rcc_init();
