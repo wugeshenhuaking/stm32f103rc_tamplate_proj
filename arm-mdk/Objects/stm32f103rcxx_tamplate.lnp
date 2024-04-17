@@ -27,12 +27,11 @@
 ".\objects\core_cm3.o"
 ".\objects\system_stm32f10x.o"
 ".\objects\startup_stm32f10x_hd.o"
-".\objects\drv_usart_msp.o"
-".\objects\drv_usart_bsp.o"
 ".\objects\drv_systick_msp.o"
 ".\objects\drv_systick_bsp.o"
 ".\objects\app_led.o"
 ".\objects\app_led_msp.o"
+".\objects\drv_usart.o"
 --strict --scatter ".\Objects\stm32f103rcxx_tamplate.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

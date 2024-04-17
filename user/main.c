@@ -5,12 +5,14 @@
 int main(void)
 {
 	
-//	NVIC_SetPriorityGrouping(3);
+	NVIC_SetPriorityGrouping(3);
 	systick_init_bsp();
 	app_led_msp_init();
-	app_led_blink(get_app_led_struct());
+    app_led_app_init();
+
 	while(1)
 	{
+        app_led_blink(get_app_led_struct());
 	}
 }
 

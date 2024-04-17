@@ -337,9 +337,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_STDPERIPH_DRIVER</Define>
+              <Define>USE_STDPERIPH_DRIVER,STM32F10X_HD</Define>
               <Undefine></Undefine>
-              <IncludePath>..\library\inc;..\startup;..\user;..\bsp;..\application;..\utility</IncludePath>
+              <IncludePath>..\library\inc;..\startup;..\user;..\bsp;..\application;..\utility;..\driver;..\middleware</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -564,16 +564,6 @@
           <GroupName>bsp</GroupName>
           <Files>
             <File>
-              <FileName>drv_usart_msp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\drv_usart_msp.c</FilePath>
-            </File>
-            <File>
-              <FileName>drv_usart_bsp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\drv_usart_bsp.c</FilePath>
-            </File>
-            <File>
               <FileName>drv_systick_msp.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\drv_systick_msp.c</FilePath>
@@ -599,6 +589,19 @@
               <FilePath>..\application\app_led_msp.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>driver</GroupName>
+          <Files>
+            <File>
+              <FileName>drv_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\driver\drv_usart.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>middleware</GroupName>
         </Group>
       </Groups>
     </Target>
